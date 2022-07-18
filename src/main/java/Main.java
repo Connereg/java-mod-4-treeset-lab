@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Main {
@@ -10,6 +11,12 @@ public class Main {
 
     public static ArrayList<Integer> getNums(int[] nums) {
         // your code here
-        return null;
+        TreeSet<Integer> numsTree = new TreeSet<>();
+        for (int number : nums) {
+            numsTree.add((Integer) number);
+        }
+        SortedSet<Integer> sortedNums = numsTree.tailSet(25);
+        ArrayList<Integer> arrayNumsList = new ArrayList<>(sortedNums);
+        return arrayNumsList;
     }
 }
